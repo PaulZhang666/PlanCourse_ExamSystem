@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+    <script src="http://cdn.redrocks.com.cn/js/spin.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <!-- build:css({.tmp,client}) styles/main.css-->
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/ui.css">
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- endbuild -->
+
+	<!--emoji-->
+
+
+
+    <style>
+	    html,body{position: static;}
+        input{margin-top: 5px;padding:10px;box-sizing: border-box;border: 1px solid #c9d7df;border-radius: 2px;width: 100%; text-align: center}
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myController" style="background-color: #f0f4f7">
+
+        <div style="width:800px;background: #fff;border: 1px solid #c9d7df; overflow: hidden;border-radius: 5px;position:absolute;left: 50%; top:50%;margin: -160px 0 0 -400px;">
+	        <div style="padding: 30px;overflow: hidden;">
+		        <div style="float: left;width: 45%;">
+			        <h2 style="text-align: center; font-size: 22px;margin: 0 0 10px;padding-bottom: 10px;overflow: hidden; font-family: 'MicroSoft Yahei' ">考试系统</h2>
+					<div style="overflow: hidden; width: 55%; float: left;">
+						<!--img src="./img/mamama.png" style="width: 120px;"/-->
+		        	</div>
+		        	<div style="overflow: hidden; text-align: center">
+			        	<p style="padding: 0 0px;color: red;line-height: 1.5;font-size: 20px">
+							<br>
+                            请不要点刷新!
+							<br><br>
+							只能提交一次!
+                        </p>
+		        	</div>
+		        </div>
+		        <div style="overflow: hidden;padding: 0 0 0 30px;font-size: 14px; border-left: 1px solid #eee;">
+                    <div class="row" style="margin-left: 0px; width:100%">
+                        <span style="font-size: 22px; font-family: 'MicroSoft Yahei'"></span>
+                    </div>
+
+
+			        <div style="margin: 10px 0 0;">
+			        	<label style="color: #999;">姓名</label>
+						<input type="text" ng-model="studentName" id="inputemail"/>
+			        </div>
+			        <div style="margin: 10px 0 0;">
+				       	<label style="color: #999;">学号</label>
+					   	<input type="text" ng-model="studentID"/>
+			        </div>
+			        <div style="margin: 10px 0 15px;text-align: right; vertical-align: bottom">
+                         <a href="#" style="color: #999;float: left"><span data-translate="Forgot Password?"></span></a>
+				         <button style="padding: 9px 30px;border-radius: 3px;background: #00BCD4;border: 0;color: #fff;font-size: 14px;cursor: pointer;" ng-click="login()">开始</button>
+			        </div>
+		        </div>
+	        </div>
+        </div>
+
+
+
+</body>
+
+<script>
+
+    angular.module("myApp", ['ngCookies'])
+            .controller('myController', ['$scope', '$cookies', myController]);
+
+    function myController($scope, $cookies){
+
+        $scope.login = function(){
+            var studentInfo = new Object();
+
+            studentInfo.studentName = $scope.studentName;
+            studentInfo.studentID = $scope.studentID;
+
+            $cookies.putObject("studentInfo", studentInfo);
+
+
+            window.location = "main.html";
+
+        }
+
+
+
+    };
+</script>
+
+
+</html>

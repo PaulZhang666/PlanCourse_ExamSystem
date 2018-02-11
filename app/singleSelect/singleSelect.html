@@ -1,0 +1,46 @@
+<div ng-controller="singleSelectCtrl" class="row" ng-cloak>
+    <div class="row" style="text-align: center; vertical-align: middle;">
+
+
+        <div data-ng-repeat="x in singleSelectShow" class="panel panel-info" data-ng-show="x.showIndex == currentIndex" style="margin-top: 100px;margin-left: 50px;margin-right: 50px;">
+            <div class="panel-heading" style="color: black">
+                {{x.content}}<span style="float: right"><input type="checkbox" id="{{x.index + 'id'}}" ng-model="x.check"><label for="{{x.index + 'id'}}">&nbsp;标记</label></span>
+            </div>
+            <table class="table table-hover" style="border: none">
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;">
+                        <input type="radio" style="margin: 5px" value="A" id="{{x.A}}" ng-model="x.model">
+                        <label for="{{x.A}}" style="font-weight: inherit">{{x.A}}</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;">
+                        <input type="radio" style="margin: 5px" value="B" id="{{x.B}}" ng-model="x.model">
+                        <label for="{{x.B}}" style="font-weight: inherit">{{x.B}}</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;">
+                        <input type="radio" style="margin: 5px" value="C" id="{{x.C}}" ng-model="x.model">
+                        <label for="{{x.C}}" style="font-weight: inherit">{{x.C}}</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;">
+                        <input type="radio" style="margin: 5px" value="D" id="{{x.D}}" ng-model="x.model">
+                        <label for="{{x.D}}" style="font-weight: inherit">{{x.D}}</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row" style="text-align: center">
+            <a href="javascript:void(0)" data-ng-click="seePrevQuestion()"><i class="fa fa-arrow-left" style="font-size: 20px; color: #00BCD4"></i></a>
+            &nbsp;&nbsp;<span  style="font-size: 20px">{{currentIndex}}</span> &nbsp;&nbsp;
+            <a href="javascript:void(0)" data-ng-click="seeNextQuestion()"><i class="fa fa-arrow-right"  style="font-size: 20px; color: #00BCD4"></i></a>
+        </div>
+    </div>
+</div>

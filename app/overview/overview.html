@@ -1,0 +1,59 @@
+<div ng-controller="overviewCtrl">
+    <div class="panel panel-info" style="margin-left: 50px;margin-right: 50px;">
+        <div class="panel-heading" style="text-align: center">
+            <span style="font-size: 20px">单选</span>
+        </div>
+        <table class="table table-hover">
+            <tr style="border-bottom: solid 1px; border-bottom-color: #dddddd">
+                <td ng-repeat="x in singleSelect_line_0" style="text-align: center">
+                    <a href="javascript:void(0)" ng-click="jumpSingle(x)">{{x.showIndex}}</a>
+                    &nbsp;<i class="fa fa-exclamation" style="color: red" ng-show="x.check"></i>
+                </td>
+            </tr>
+            <tr>
+                <td ng-repeat="x in singleSelect_line_1" style="text-align: center">
+                    <a href="javascript:void(0)" ng-click="jumpSingle(x)">{{x.showIndex}}</a>
+                    &nbsp;<i class="fa fa-exclamation" style="color: red" ng-show="x.check"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel panel-info" style="margin-left: 50px;margin-right: 50px;">
+        <div class="panel-heading" style="text-align: center">
+            <span style="font-size: 20px">多选</span>
+        </div>
+        <table class="table table-hover">
+            <tr style="border-bottom: solid 1px; border-bottom-color: #dddddd">
+                <td ng-repeat="x in multiSelect_line_0" style="text-align: center">
+                    <a href="javascript:void(0)" ng-click="jumpMulti(x)">{{x.showIndex}}</a>
+                    &nbsp;<i class="fa fa-exclamation" style="color: red" ng-show="x.check"></i>
+                </td>
+            </tr>
+            <tr>
+                <td ng-repeat="x in multiSelect_line_1" style="text-align: center">
+                    <a href="javascript:void(0)" ng-click="jumpMulti(x)">{{x.showIndex}}</a>
+                    &nbsp;<i class="fa fa-exclamation" style="color: red" ng-show="x.check"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel panel-info" style="margin-left: 50px;margin-right: 50px;">
+        <div class="panel-heading" style="text-align: center">
+            <span style="font-size: 20px">判断</span>
+        </div>
+        <table class="table table-hover">
+            <tr style="border-bottom: solid 1px; border-bottom-color: #dddddd">
+                <td ng-repeat="x in judge_line_0" style="text-align: center">
+                    <a href="javascript:void(0)" ng-click="jumpJudge(x)">{{x.showIndex}}</a>
+                    &nbsp;<i class="fa fa-exclamation" style="color: red" ng-show="x.check"></i>
+                </td>
+            </tr>
+            <tr>
+                <td ng-repeat="x in judge_line_1" style="text-align: center">
+                    <a href="javascript:void(0)" ng-click="jumpJudge(x)">{{x.showIndex}}</a>
+                    &nbsp;<i class="fa fa-exclamation" style="color: red" ng-show="x.check"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

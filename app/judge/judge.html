@@ -1,0 +1,28 @@
+<div ng-controller="judgeCtrl" class="row" ng-cloak>
+    <div class="row" style="text-align: center; vertical-align: middle;">
+
+
+        <div data-ng-repeat="x in judgeShow" class="panel panel-info" data-ng-show="x.showIndex==currentIndex" style="margin-top: 100px;margin-left: 50px;margin-right: 50px;">
+            <div class="panel-heading" style="color: black">
+                {{x.content}}<span style="float: right"><input type="checkbox" id="{{x.index + 'id'}}" ng-model="x.check"><label for="{{x.index + 'id'}}">&nbsp;标记</label></span>
+            </div>
+            <div class="panel-body">
+                <input type="radio" style="margin: 5px" value="true" id="{{x.index + 'yes'}}" ng-model="x.model">
+                <label for="{{x.index + 'yes'}}" style="font-weight: inherit"><i class="fa fa-check"></i></label>
+                <br>
+                <input type="radio" style="margin: 5px" value="false" id="{{x.index + 'no'}}" ng-model="x.model">
+                <label for="{{x.index + 'no'}}" style="font-weight: inherit"><i class="fa fa-close"></i></label>
+                <br>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row" style="text-align: center">
+            <a href="javascript:void(0)" data-ng-click="seePrevQuestion()"><i class="fa fa-arrow-left" style="font-size: 20px; color: #00BCD4"></i></a>
+            &nbsp;&nbsp;<span  style="font-size: 20px">{{currentIndex}}</span> &nbsp;&nbsp;
+            <a href="javascript:void(0)" data-ng-click="seeNextQuestion()"><i class="fa fa-arrow-right"  style="font-size: 20px; color: #00BCD4"></i></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<header class="top-header clearfix" style="vertical-align: middle">
+    <div ui-preloader></div>
+
+    <!-- Logo -->
+    <div class="logo" style="background: #00BCD4">
+        <a href="#/" style="color: white">
+            <span class="logo-text">Copyright</span>
+            <i class="fa fa-copyright"></i>
+            <span class="logo-text">汪</span>
+        </a>
+    </div>
+
+    <!-- needs to be put after logo to make it work -->
+    <div class="menu-button" toggle-off-canvas>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+
+    <div class="top-nav" ng-controller="headerCtl">
+
+        <button class="btn btn-info" id="save" data-ng-click="submit()" style="float: right; width: 100px; height: 64px">
+            交卷！
+        </button>
+        <timer countdown="120" interval="60000" id="countdown">
+            <div class="progress progress-striped active {{displayProgressActive}}" style="text-align: center; vertical-align: middle;height: 64px">
+                <span style="position: fixed; margin-top: 17px; margin-left: -25px; font-size: 20px">剩余时间 :{{countdown + 1}}分钟</span>
+                <div class="bar" style="height: 64px; width:{{progressBar}}%;">
+                </div>
+            </div>
+        </timer>
+    </div>
+</header>
